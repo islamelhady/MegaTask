@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.elhady.mega.ui.component.splash.SplashFragment"
+        android:label="Blank"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_jobsListFragment"
+            app:destination="@id/jobsListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/jobsListFragment"
+        android:name="com.elhady.mega.ui.component.jobs.JobsListFragment"
+        android:label="JobsListFragment"
+        tools:layout="@layout/fragment_jobs_list">
+        <action
+            android:id="@+id/actionJobsDetails"
+            app:destination="@id/jobsDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/jobsDetailsFragment"
+        android:name="com.elhady.mega.ui.component.details.JobsDetailsFragment"
+        android:label="JobsDetailsFragment"
+        tools:layout="@layout/fragment_jobs_details" />
+
+</navigation>
