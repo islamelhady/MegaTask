@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp() =
-        Navigation.findNavController(this, R.id.jobs_list_fragment).navigateUp()
+        Navigation.findNavController(this, R.id.nav_host_fragment).navigateUp()
 
     private fun hideActionBar() {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE)

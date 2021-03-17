@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.elhady.mega.ui.component.splash.SplashFragment"
-        android:label="Blank"
+        android:name="com.elhady.mega.ui.main.view.splash.SplashFragment"
+        android:label="fragment_splash"
         tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_jobsListFragment"
@@ -17,9 +17,8 @@
 
     <fragment
         android:id="@+id/jobsListFragment"
-        android:name="com.elhady.mega.ui.component.jobs.JobsListFragment"
-        android:label="JobsListFragment"
-        tools:layout="@layout/fragment_jobs_list">
+        android:name="com.elhady.mega.ui.main.view.jobs.JobsListFragment"
+        android:label="JobsListFragment">
         <action
             android:id="@+id/actionJobsDetails"
             app:destination="@id/jobsDetailsFragment" />
@@ -27,8 +26,8 @@
 
     <fragment
         android:id="@+id/jobsDetailsFragment"
-        android:name="com.elhady.mega.ui.component.details.JobsDetailsFragment"
-        android:label="JobsDetailsFragment"
+        android:name="com.elhady.mega.ui.main.view.details.JobsDetailsFragment"
+        android:label="fragment_jobs_details"
         tools:layout="@layout/fragment_jobs_details" />
 
 </navigation>
