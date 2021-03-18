@@ -5,59 +5,81 @@
 
     <data>
 
+        <variable
+            name="job"
+            type="com.elhady.mega.data.model.Jobs" />
+
     </data>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/item_jobs_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_15"
-        android:layout_marginTop="@dimen/dp_6"
-        android:layout_marginEnd="@dimen/dp_15"
-        android:padding="@dimen/dp_5"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="6dp"
+        android:clickable="true"
+        android:focusable="true"
         app:cardCornerRadius="@dimen/dp_8"
         app:cardElevation="@dimen/dp_2"
         app:cardUseCompatPadding="true">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/company_logo"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_margin="16dp"
-                android:src="@drawable/logo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginStart="@dimen/dp_15"
+                android:src="@drawable/not_found"
+                app:jobSrc="@{job.company_logo}" />
 
-            <TextView
-                android:id="@+id/company_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:textSize="12sp"
-                app:layout_constraintStart_toEndOf="@+id/company_logo"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Mega trust" />
 
-            <TextView
-                android:id="@+id/job_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="@dimen/dp_6"
-                android:layout_marginBottom="16dp"
-                android:textSize="15sp"
-                app:layout_constraintStart_toEndOf="@+id/company_logo"
-                app:layout_constraintTop_toBottomOf="@+id/company_name"
-                tools:text="Android Developer" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-medium"
+                    android:lineSpacingExtra="0dp"
+                    android:maxLines="2"
+                    android:text="@{job.company}"
+                    android:textSize="18sp"
+                    tools:text="Mega trust" />
+
+                <TextView
+                    android:id="@+id/job_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-thin"
+                    android:lineSpacingExtra="0dp"
+                    android:maxLines="2"
+                    android:text="@{job.title}"
+                    android:textSize="14sp"
+                    tools:text="Android Developer" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 </layout>

@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.elhady.mega.R
 import kotlinx.android.synthetic.main.fragment_splash.*
-
-
+/**
+ * Created by islam elhady on 03/16/2021.
+ */
 class SplashFragment : Fragment() {
 
     override fun onCreateView(
@@ -22,7 +23,7 @@ class SplashFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        loading.setOnClickListener {
+        start.setOnClickListener {
             findNavController().navigate(R.id.jobsListFragment)
         }
     }

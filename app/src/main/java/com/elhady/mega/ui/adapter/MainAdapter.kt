@@ -1,40 +1,54 @@
 package com.elhady.mega.ui.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.elhady.mega.R
 import com.elhady.mega.data.model.Jobs
-import kotlinx.android.synthetic.main.item_jobs.view.*
+import com.elhady.mega.databinding.ItemJobsBinding
 
-class MainAdapter(private val jobs: ArrayList<Jobs>, private val clickListener: OnJobItemClickListener) :
-    RecyclerView.Adapter<MainAdapter.DataViewHolder>() {
-    class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+/**
+ * Created by islam elhady on 03/16/2021.
+ */
+class MainAdapter(
+    private val jobs: ArrayList<Jobs>,
+    private val clickListener: OnJobItemClickListener
+) :
+    RecyclerView.Adapter<MainAdapter.JobsViewHolder>() {
 
-        fun bind(jobs: Jobs, action: OnJobItemClickListener) {
-            itemView.apply {
-                job_title.text = jobs.title
-                company_name.text = jobs.company
-            }
+    class JobsViewHolder(
+        private val binding: ItemJobsBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(item: Jobs, action: OnJobItemClickListener) {
+
+                binding.apply {
+                    job = item
+                    executePendingBindings()
+                }
+
             itemView.setOnClickListener {
-                action.onItemClick(jobs, adapterPosition)
+                action.onItemClick(item, adapterPosition)
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder =
-        DataViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_jobs, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobsViewHolder {
+        return JobsViewHolder(
+            ItemJobsBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
         )
+    }
 
     override fun getItemCount(): Int = jobs.size
 
-    override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: JobsViewHolder, position: Int) {
         holder.bind(jobs[position], clickListener)
     }
 
-    fun addUsers(jobs: List<Jobs>) {
+    fun addJobsList(jobs: List<Jobs>) {
         this.jobs.apply {
             clear()
             addAll(jobs)

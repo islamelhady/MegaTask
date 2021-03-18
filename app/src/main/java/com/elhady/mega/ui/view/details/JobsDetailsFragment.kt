@@ -9,6 +9,9 @@ import com.elhady.mega.R
 import com.elhady.mega.data.model.Jobs
 import com.elhady.mega.databinding.FragmentJobsDetailsBinding
 
+/**
+ * Created by islam elhady on 03/16/2021.
+ */
 class JobsDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentJobsDetailsBinding

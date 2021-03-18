@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elhady.mega.R
 import com.elhady.mega.data.model.Jobs
+import com.elhady.mega.databinding.FragmentJobsListBinding
 import com.elhady.mega.ui.adapter.MainAdapter
 import com.elhady.mega.utils.Status
 import com.elhady.mega.ui.viewmodel.MainViewModel
@@ -19,10 +20,13 @@ import com.elhady.mega.ui.viewmodel.MainViewModel.Companion.createArguments
 import kotlinx.android.synthetic.main.fragment_jobs_list.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
+/**
+ * Created by islam elhady on 03/16/2021.
+ */
+class JobsListFragment : Fragment(), MainAdapter.OnJobItemClickListener {
 
-class JobsListFragment : Fragment() , MainAdapter.OnJobItemClickListener{
-
-    private val mainViewModel : MainViewModel by viewModel()
+    private lateinit var binding: FragmentJobsListBinding
+    private val mainViewModel: MainViewModel by viewModel()
     private lateinit var adapter: MainAdapter
 
 
@@ -30,7 +34,9 @@ class JobsListFragment : Fragment() , MainAdapter.OnJobItemClickListener{
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_jobs_list, container, false)
+
+        binding = FragmentJobsListBinding.inflate(inflater, container, false)
+        return binding.root
 
     }
 
@@ -66,7 +72,7 @@ class JobsListFragment : Fragment() , MainAdapter.OnJobItemClickListener{
 
     private fun setupUI() {
         recyclerView.layoutManager = LinearLayoutManager(activity)
-        adapter = MainAdapter(arrayListOf(),this)
+        adapter = MainAdapter(arrayListOf(), this)
         recyclerView.addItemDecoration(
             DividerItemDecoration(
                 recyclerView.context,
@@ -78,14 +84,13 @@ class JobsListFragment : Fragment() , MainAdapter.OnJobItemClickListener{
 
     private fun retrieveList(jobs: List<Jobs>) {
         adapter.apply {
-            addUsers(jobs)
+            addJobsList(jobs)
             notifyDataSetChanged()
         }
     }
 
     override fun onItemClick(jobs: Jobs, position: Int) {
-        Toast.makeText(activity, jobs.title, Toast.LENGTH_LONG).show()
-        findNavController().navigate(R.id.jobsDetailsFragment,createArguments(jobs))
+        findNavController().navigate(R.id.jobsDetailsFragment, createArguments(jobs))
 
     }
 

@@ -4,5 +4,11 @@
     <string name="jobs_image">Jobs image</string>
     <string name="jobs_key">Jobs</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="description">description</string>
+    <string name="job_title">Android Developer</string>
+    <string name="company_name">Mega Trust Company</string>
+    <string name="job_location">Remote</string>
+    <string name="job_url">Job Url</string>
+    <string name="company_url">Company Url</string>
+    <string name="description">We are seeking a Android Developer to join our team in a full-time capacity beginning March 1,2021. this is a work remotely position but requires at least 5 hours overlap 10am-6pm</string>
+    <string name="job_created">Thu Mar 25 19:3051 UTC 2021</string>
 </resources>

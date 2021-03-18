@@ -7,6 +7,9 @@ import com.elhady.mega.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
+/**
+ * Created by islam elhady on 03/16/2021.
+ */
 class App: Application() {
 
     override fun onCreate() {

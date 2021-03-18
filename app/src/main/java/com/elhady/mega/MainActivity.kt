@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.view.Window
 import androidx.navigation.Navigation
 
+/**
+ * Created by islam elhady on 03/16/2021.
+ */
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
