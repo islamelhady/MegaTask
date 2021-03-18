@@ -5,6 +5,7 @@
 
     <data>
 
+        <import type="android.text.Html"/>
         <variable
             name="jobs"
             type="com.elhady.mega.data.model.Jobs" />
@@ -167,7 +168,7 @@
                 android:fontFamily="sans-serif-thin"
                 android:paddingStart="@dimen/dp_12"
                 android:paddingEnd="@dimen/dp_12"
-                android:text="@{jobs.description}"
+                android:text="@{Html.fromHtml(jobs.description)}"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="normal"
