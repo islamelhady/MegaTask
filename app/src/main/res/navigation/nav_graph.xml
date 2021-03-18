@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.elhady.mega.ui.main.view.splash.SplashFragment"
+        android:name="com.elhady.mega.ui.view.splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash">
         <action
@@ -17,16 +17,16 @@
 
     <fragment
         android:id="@+id/jobsListFragment"
-        android:name="com.elhady.mega.ui.main.view.jobs.JobsListFragment"
+        android:name="com.elhady.mega.ui.view.jobs.JobsListFragment"
         android:label="JobsListFragment">
         <action
-            android:id="@+id/actionJobsDetails"
+            android:id="@+id/action_jobsListFragment_to_jobsDetailsFragment"
             app:destination="@id/jobsDetailsFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/jobsDetailsFragment"
-        android:name="com.elhady.mega.ui.main.view.details.JobsDetailsFragment"
+        android:name="com.elhady.mega.ui.view.details.JobsDetailsFragment"
         android:label="fragment_jobs_details"
         tools:layout="@layout/fragment_jobs_details" />
 

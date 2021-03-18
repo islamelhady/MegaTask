@@ -1,6 +1,9 @@
 package com.elhady.mega.data.api
 
-class ApiHelper(private val apiService: ApiService) {
+import com.elhady.mega.data.model.Jobs
+import retrofit2.Response
 
-    suspend fun getJobs() = apiService.getJobs("api")
+interface ApiHelper {
+
+    suspend fun getJobs(): Response<List<Jobs>>
 }

@@ -1,4 +1,4 @@
-package com.elhady.mega.ui.main.view.details
+package com.elhady.mega.ui.view.details
 
 import android.os.Bundle
 import android.view.LayoutInflater

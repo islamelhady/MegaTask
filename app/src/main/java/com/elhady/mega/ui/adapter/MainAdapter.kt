@@ -1,4 +1,4 @@
-package com.elhady.mega.ui.main.adapter
+package com.elhady.mega.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import com.elhady.mega.R
 import com.elhady.mega.data.model.Jobs
 import kotlinx.android.synthetic.main.item_jobs.view.*
 
-class MainAdapter(private val jobs: ArrayList<Jobs>, val clickListener: OnJobItemClickListener) :
+class MainAdapter(private val jobs: ArrayList<Jobs>, private val clickListener: OnJobItemClickListener) :
     RecyclerView.Adapter<MainAdapter.DataViewHolder>() {
     class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

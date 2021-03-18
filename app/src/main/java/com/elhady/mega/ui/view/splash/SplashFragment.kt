@@ -1,4 +1,4 @@
-package com.elhady.mega.ui.main.view.splash
+package com.elhady.mega.ui.view.splash
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -16,7 +16,6 @@ class SplashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }
 
